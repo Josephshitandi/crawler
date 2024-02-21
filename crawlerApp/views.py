@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup as BSoup
-from crawlerapp.models import Headline
+from crawlerApp.models import Headline
 
 def scrape(request):
   session = requests.Session()
@@ -28,4 +28,4 @@ def news_list(request):
     context = {
         'object_list': headlines,
     }
-    return render(request, "news/home.html", context)
+    return render(request, "crawlerApp/home.html", context)
